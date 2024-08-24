@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width" name="viewport">
+  <title>Introduction of W3C Identity Strategy</title>
+  <link rel="stylesheet" href="https://www.w3.org/Talks/Tools/Shower3-1/slides.css">
+  <script src="https://www.w3.org/Talks/Tools/Shower3-1/shower.js" type="text/javascript"></script>
+<style>
+.slide .icon-block {display: block; position: relative; padding: 0 0 0 4em;
+  line-height: 1.5; min-height: 3em /* 2 lines */}
+.slide .icon-block > .icon {position: absolute;
+  font-size: 1.8em; text-align: center;
+  top: 0; left: 0; width: 1.5em; height: 1.5em; margin: 0;
+  object-fit: cover}
+    .slide li.icon-block {margin-left: 0; list-style: none}
+    .slide li.icon-block::before {content: none}
+    dd {
+      margin-left: 2em;
+    }
+    .text-right { text-align: right; }
+    #members {
+      border-collapse: collapse;
+    }
+    #members td, #members th {
+      border: 1px solid;
+    }
+    #members td {
+      vertical-align: top;
+     }
+    .spaced {
+      margin-top: 3em;
+    }
+    .spaced > li {
+      margin-top: 1em;
+    }
+
+            /* one item on 2 columns */
+            .two-columns {
+          column-count: 2; column-gap: 1.2 rem;
+        }
+
+        /* 2x1 grid */
+        .grid2 {
+          display: grid;
+          gap: 1.2rem;
+          grid-template-columns: 1fr 1fr;
+          place-items: center center;
+        }
+
+        /* 1+2 grid */
+        .grid12 {
+          display: grid;
+          gap: 1.2rem;
+          grid-template-columns: 1fr 2fr;
+          place-items: center center;
+        }
+        figure {
+          margin: 10px;
+        }
+        /* 3x1 grid */
+        .grid3 {
+          display: grid;
+          gap: 0rem;
+         grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .grid3 h4 {
+          text-align: center
+        }
+
+        .grid3 h4.green {
+          color: rgba(124, 181, 84);
+        }
+
+        .grid3 h4.blue {
+          color: rgba(65, 131, 215);
+        }
+
+        .grid3 div {
+          padding: 5px;
+          border-radius: 20px;
+        }
+
+        .grid3 div.green {
+          background: rgba(124, 181, 84, 0.2);
+          border: 1px solid rgba(124, 181, 84, 0.5);
+        }
+
+        .grid3 div.blue {
+          background: rgba(65, 131, 215, 0.2);
+          border: 1px solid rgba(65, 131, 215, 0.5);
+          padding: 20px;
+        }
+
+        /* 2x2 grid */
+        .grid4 {
+          display: grid;
+          gap: 1.2rem;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 20vh 20vh;
+          place-items: center center;
+        }
+        .grid2 *, .grid4 * {
+            max-width: 100%;
+        }
+        .grid2 * {
+            max-height: 350px;
+        }
+        .grid4 * {
+            max-height: 175px;
+        }
+        figcaption {
+            text-align: center;
+            font-size: 0.8em;
+            color: blue;
+        }
+
+  </style>
+ </head>
+ <body class="shower">
+  <div class="progress">
+   <!-- Remove this element if you don't want a progress bar -->
+  </div>
+
+  <section class="slide cover clear" id="start">
+   <h1>Introduction of W3C Identity Strategy</h1>
+   <p>September 6, 2024</p>
+   <address style="font-size:medium">Simone Onofri, simone@w3.org,<br>
+  <span style="font-size: small;">Security Lead</span></address>
+</section>
+
+<section class="slide side right">
+  <h1>World Wide Web Consortium</h1>
+  <img class=side src='https://www.w3.org/2024/Talks/web-automotive/w3c.png' alt='W3C logo'>
+  <ul style="font-size: 80%;">
+      <li>Founded in 1994 by Tim Berners-Lee and was Director until June 12, 2023</li>
+      <li>Around 300 technical Web standards,<br>370 in progress</li>
+      <li>Consensus-driven process, <br>Royalty-Free patent policy</li>
+      <li>Over 400 members</li>
+  </ul>
+</section>
+
+<section class="slide" id="web">
+  <h1>W3C’s Vision for the World Wide Web</h1>
+    <blockquote cite="https://www.w3.org/TR/w3c-vision/#vision-web">
+      <ul class="spaced">
+        <li>
+         The Web is for <a href="https://www.w3.org/TR/ethical-web-principles/#allpeople">all humanity</a>.
+        <li>
+         The Web is designed for the <a href="https://www.w3.org/TR/ethical-web-principles/#noharm">good of its users</a>.
+        <li>
+         The Web must be <a href="https://www.w3.org/TR/ethical-web-principles/#privacy">safe for its users</a>.
+        <li>
+         There is <a href="https://www.w3.org/TR/ethical-web-principles/#oneweb">one interoperable world-wide Web</a>.
+       </ul>
+  </blockquote>
+</section>
+
+<section class="slide" id="principles">
+  <h1>Driven by principles</h1>
+
+  <ul>
+    <li><a href='https://www.w3.org/TR/ethical-web-principles/'>Ethical Web Principles</a></li>
+    <li><a href='https://www.w3.org/TR/di-princ/'>Device Independence Principles</a></li>
+    <li><a href="https://www.w3.org/TR/privacy-principles/">Privacy Principles</a></li>
+    <li><a href="https://www.w3.org/TR/webmachinelearning-ethics/">Ethical Principles for Web Machine Learning</a></li>
+    <li><a href="https://www.w3.org/TR/design-principles/">Web Platform Design Principles</a></li>
+  </ul>
+  <p>&hellip; and multiple set of guidelines</p>
+</section>
+
+<section class="slide">
+  <h1>Digital Identity and the Web</h1>
+</section>
+
+<section class="slide">
+  <h1>Decentralized Identifiers</h1>
+  <p  style="font-size: 80%;">
+An identifier technology based on cryptography that empowers us to control our
+data and consent to its usage; often paired with Verifiable
+Credentials. These methods can rely on various technologies, including blockchains, the web, InterPlanetary File System (IPFS), and Domain Name System (DNS) [did-spec-registries]. 基于密码学的标识符技术，促使我们掌管我们的个人数据并授权同意其使用；通常与 VC 可验证凭据配对。这些方法可以依靠各种技术，包括区块链，Web，行星际文件系统（IPFS）和域名系统（DNS）[DID Spec-Spec-Registries]。<br>
+<a href="https://www.w3.org/TR/did-core/">Decentralized Identifiers (DIDs) v1.0</a>, W3C Standard, July 2022.
+  </p>
+  <div style="margin: auto; max-width:90%">
+     <img
+     src="https://w3.org/2023/Talks/plh-jp-mic/did.svg"
+     alt="An example of a decentralized identifier shown left to right the 'did' scheme, followed by a colon, followed by an 'example' DID Method identifier, followed by another colon, followed by a method specific identifier with the characters '123456789abcdefghi' is shown." />
+  </div>
+ </section>
+   
+<!--
+ <section class="slide">
+  <h1>Verifiable Credentials (VCs)</h1>
+  <p  style="font-size: 80%;">
+A privacy-preserving technology for issuing, storing, and presenting education
+degrees, government-issued ID cards, shipping container manifests, certified
+product information, and other machine-readable credentials.<br>
+<a href="https://www.w3.org/groups/wg/vc/publications/">Verifiable Credentials</a>, W3C Standard, March 2022.
+  </p>
+  <div style="margin: auto; max-width:40%">
+    <img src="https://www.w3.org/TR/vc-data-model/diagrams/credential.svg" alt="Verifiable Credentials: Credential Metadata, Claim(s), Proof(s)">
+  </div>
+</section>
+-->
+
+<section class="slide">
+  <h1>Ongoing work on VCs</h1>
+
+  <ul style="font-size: 80%;">
+    <li>New revision of the VC Data Model VC</li>
+    <li>BitString Status List: publishing status information such as suspension or revocation/li>
+    <li>Data Integrity: ensuring the authenticity and integrity
+      <ul>
+        <li>BBS</li>
+        <li>EdDSA</li>
+        <li>ECDSA</li>
+        <li><i><a href="https://github.com/w3c-ccg/di-quantum-safe">Quantum-Safe</a></i></li>
+      </ul>
+    </li>
+    <li>JSON Object Signing and Encryption (JOSE) and CBOR Object Signing and Encryption (COSE)</li>
+  </ul>
+  <p>See also <a href="https://www.w3.org/TR/vc-overview/">Verifiable Credentials Overview</a>, July 2024</p>
+</section>
+
+<section class="slide">
+  <h1>We want to hear from you!</h1>
+  <ul style="font-size: 80%;">
+    <li>What is the status of Digital Identity in China?
+    <li>Government point of view?
+    <li>Standards to implement?
+    <li>Any Risks？
+    <li>Specific Personas (fictional representation of a user, created to understand and anticipate the target audience's needs, behaviors, and goals) to consider in our model？
+    <li>How can we help?
+</ul>
+</section>
+
+<section class="slide">
+  <h1><span lang="cn">谢谢</span></h1>
+  <p>See also:</p>
+  <ul>
+    <li><q>Identity & the Web</q><a href="https://www.w3.org/reports/identity-web-impact/">https://www.w3.org/reports/identity-web-impact/</a></li>
+    <li><q>Threat Modeling for Digital Credentials</q><a href="https://github.com/w3c-cg/threat-modeling/blob/main/models/decentralized-identities.md/">https://github.com/w3c-cg/threat-modeling/blob/main/models/decentralized-identities.md</a></li>
+  </ul>
+    <div>
+    <p>
+      These slides:<br><a href="https://simoneonofri.github.io/inclusion-2024">https://simoneonofri.github.io/inclusion-2024</a>
+    </p>
+    <p>Email: simone@w3.org</p>
+    <p>WeChat: @@wechat@@</p>
+
+  </div>
+</section>
+
+ </body>
+</html>
