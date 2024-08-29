@@ -1,3 +1,3 @@
 # Slides for Inclusion 2024 conference
 
-Pages at https://simoneonofri.github.io/inclusion-2024
+http://w3.org/2024/Talks/inclusion-simone
