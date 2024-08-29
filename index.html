@@ -158,6 +158,12 @@
     .slide.cover address {
       font-family: My Gill Sans;
     }
+    .todo {
+      background-color: yellow;
+    }
+    .center {
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -173,61 +179,200 @@
       <span style="font-size: small;">Security Lead</span>
     </address>
   </section>
+  <!-- Introduction -->
   <section class="slide">
     <h1>Who am I?</h1>
     <ul class="spaced">
-      <li>Security Geek since 1998</li>
+      <li>Security Geek since 1998 (and before)</li>
       <li>Semantic Web Deployment Working Group member in 2006</li>
       <li>W3C Security Lead since 2024</li>
       <li><em>I care about a secure Web</em></li>
     </ul>
   </section>
+
   <section class="slide side right">
-    <h1>World Wide Web Consortium</h1>
+    <h1>World Wide Web Consortium 万维网联盟</h1>
     <img class=side src='https://www.w3.org/2024/Talks/web-automotive/w3c.png' alt='W3C logo'>
     <ul style="font-size: 80%;">
-      <li>Founded in 1994 by Tim Berners-Lee and was Director until June 12, 2023</li>
-      <li>Around 300 technical Web standards,<br>370 in progress</li>
-      <li>Consensus-driven process, <br>Royalty-Free patent policy</li>
-      <li>Over 400 members</li>
+        <li>Founded in 1994 by Tim Berners-Lee and was Director until June 12, 2023 由 Tim Berners-Lee 于 1994 年创立，并担任董事至 2023 年 6 月 12 日</li>
+        <li>Around 300 technical Web standards,<br>370 in progress 约370份开发中的标准</li>
+        <li>Consensus-driven process 由共识驱动的流程, <br>Royalty-Free patent policy 免版税专利政策</li>
+        <li>Over 400 members 超过 400个成员单位</li>
     </ul>
   </section>
 
-  <section class="slide" id="web">
-    <h1>W3C’s Vision for the World Wide Web</h1>
-    <blockquote cite="https://www.w3.org/TR/w3c-vision/#vision-web">
-      <ul class="spaced">
-        <li>
-          The Web is for <a href="https://www.w3.org/TR/ethical-web-principles/#allpeople">all humanity</a>.
-        <li>
-          The Web is designed for the <a href="https://www.w3.org/TR/ethical-web-principles/#noharm">good of its
-            users</a>.
-        <li>
-          The Web must be <a href="https://www.w3.org/TR/ethical-web-principles/#privacy">safe for its users</a>.
-        <li>
-          There is <a href="https://www.w3.org/TR/ethical-web-principles/#oneweb">one interoperable world-wide Web</a>.
-      </ul>
-    </blockquote>
-  </section>
-
-  <section class="slide" id="principles">
-    <h1>Driven by principles</h1>
-    <ul>
-      <li><a href='https://www.w3.org/TR/ethical-web-principles/'>Ethical Web Principles</a></li>
-      <li><a href='https://www.w3.org/TR/di-princ/'>Device Independence Principles</a></li>
-      <li><a href="https://www.w3.org/TR/privacy-principles/">Privacy Principles</a></li>
-      <li><a href="https://www.w3.org/TR/webmachinelearning-ethics/">Ethical Principles for Web Machine Learning</a>
+  <section class="slide side right" id="how">
+    <h1>Security @ W3C</h1>
+    <!--
+    <img class="side cover clear" width=498 height=575
+    src="lego_group.png"
+    alt="[Picture of two LEGO Stormtroppers with a wrench and a magnifying glass, and Darth Vader with a laptop]"> 
+    -->
+    <ul style="font-size: smaller">
+      <li>Developing security technology standards
+        <ul>
+          <li>Web Application Security Working Group</li>
+          <li>Web Authentication Working Group</li>
+          <li>Federated Identity Working Group</li>
+          <li>Web Payments Security Interest Group</li>
+        </ul>
+     </li>
+      <li>Reviewing the security of the standards
+        <ul>
+          <li>Threat Modeling Community Group</li>
+          <li>Security Interest Group (proposed)</li>
+        </ul>
       </li>
-      <li><a href="https://www.w3.org/TR/design-principles/">Web Platform Design Principles</a></li>
+      <li>Guiding Web Developers
+      <ul>
+        <li>Security Web Application Guidelines Commynity Group</li>
+      </ul>
+      </li>
     </ul>
-    <p>&hellip; and multiple set of guidelines</p>
+   <p>https://www.w3.org/mission/security/</p>
+   </section>
+  
+  <section class="slide">
+    <h1>Identity @ W3C</h1>
+    <ul>
+      <li>Web Authentication for Passwordless logins</li>
+      <li>Federated Credentials Management and Status API to avoid third-party cookies</li>
+      <li>Digital Credentials API for mediation of presentation <sup>proposed</sup></li>
+      <li>Verifiable Credentials and Decentralized Identifiers (DID) with BBS</li>
+      <li>Verifiable Credentials API, Verifiable Credentials Barcodes, Quantum-Proof signatures <sup>community</sup></li>
+    </ul>
+  </section> 
+
+  <!-- Threat Modeling -->
+  <section class="slide">
+    <h1>What us Threat Modeling?</h1>
+    <ul>
+      <li>Threat Modeling is a family of structured, repeatable processes that allows you to make rational decisions to secure applications, software, and systems (Shostack, 2014).</li>
+      <li>During Threat Modeling, potential threats, such as vulnerabilities or the absence of appropriate safeguards, can be identified and enumerated, and countermeasures prioritized (OWASP).</li>
+      <li>In general terms is a form of risk assessment that models aspects of the attack and defense sides of an entity (NIST SP 800-53 Rev. 5, NIST SP 800-154).</li>
+    </ul>
+  </section> 
+
+  <section class="slide">
+    <h1>Do we do threat modeling yet?</h1>
+  </section> 
+
+  <section class="slide">
+    <h1>The four questions of Threat Modeling</h1>
+    <p>Answering the following questions:</p>
+    <ul>
+      <li>What are we working on?</li>
+      <li>What can go wrong?</li>
+      <li>What are we going to do about it?</li>
+      <li>Did we do a good job?</li>
+    </ul>
+  </section>
+  
+  <section class="slide">
+    <h1>Which model is better?</h1>
+    <span class="todo">@@two pictures of LEGO Millenium Falcon vs Disneyworld's falcon@@</span>
+  </section> 
+
+  <!-- Decentralized Credentials Threat Model -->
+  <section class="slide">
+    <h1>What are we working on?<br><strong>Big Picture</strong></h1>
+    <figure class="center">
+      <img width="60%" src="https://www.w3.org/reports/identity-web-impact/figures/decentralized-identity-layers.svg">
+      <figcaption>Full Picture</figcaption>
+    </figure>
   </section>
 
   <section class="slide">
-    <h1>Digital Identity and the Web</h1>
+    <h1>What are we working on?<br><strong>Credential Layer</strong></h1>
+    <figure class="center">
+      <img src="https://www.w3.org/TR/vc-data-model-2.0/diagrams/ecosystem.svg">
+      <figcaption>Credential Layer</figcaption>
+    </figure>
   </section>
 
   <section class="slide">
+    <h1>What are we working on?<br><strong>Verifiable Presentation</strong></h1>
+    <figure class="center">
+      <img witdh="60%" src="https://www.w3.org/TR/vc-data-model-2.0/diagrams/vp-jwt.svg">
+      <figcaption class="todo">Presentation</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide todo">
+    <h1>What can go wrong?</h1>
+    <p>A lot of things, we can apply different approaches:</p> 
+    <ul>
+      <li><strong>STRIDE</strong>: Spoofing, Tampering, Repudiation, Denial of service, Escalation of privileges</li>
+      <li><strong>LINDDUN</strong>: Linking, Identifying, Non-Repudiation, Detecting, Data Disclosure, Unawareness & Inintervenability, Non-Compliance</li>
+      <li><strong>RFC 3552</strong>: Replay Attacks, Message Insertion, Message Deletion, Message Modification, Man-In-The-Middle</li>
+      <li><strong>RFC 6973</strong>: Correlation, Identification, Secondary Use, Disclosure, Exclusion</li>
+      <li><strong>OSSTMM</strong>: Visibility, Access, Trust, Authentication, Indemnification, Resilience, Subjugation, Continuity, Non-Repudiation, Confidentiality, Privacy, Integrity, Alarm</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h1>What can go wrong?<br><strong>Verifiable Presentation</strong></h1>
+    <span class="todo">@@picture with threats attached@@</span>
+  </section>
+
+  <section class="slide todo">
+    <h1>What are we going to do about it?<br><strong>Cryptography</strong></h1>
+    <ul style="font-size: 80%;">
+      <li><strong>Blinded Signature</strong>: is a type of digital signature for which the content of the message is concealed before it is signed. With Public-Private Key Cryptography, the signature can be correlated with who signed it, specifically to their public key (and this is an important feature if we think about when we want to be sure of the sender when using GPG). Zero-knowledge cryptographic methods do not reveal the actual signature. Instead, with ZKP, we can send cryptographic proof of signature without providing the verifier with any other information about who signed. Thus protecting the public key of the holder.</li>
+      <li><strong>Selective disclosure</strong>: is the ability to show only a part (claim) of the credential and not all of it or show only possession of that credential. as needed in the context of the transaction. For example, we can show only the date of birth rather than the entire driver's license where it is contained. This allows us to minimize the data sent to the verifier further.</li>
+      <li><strong>Predicate Proofs and Range Proof</strong>: is the ability to respond to a boolean assertion (true-false) to a specific request, and it is an additional step for privacy and minimization. For example, if we say we are of age, I don't have to show just the date of birth but compute the answer.</li>
+      <li><strong>Post-Quantum signature?</strong></li>
+    </ul>
+  </section>
+
+  <section class="slide"  class="todo">
+    <h1>What are we going to do about it?<br><strong>Presentation and Verification</strong></h1>
+    <ul style="font-size: 80%;">
+      <li><strong>Anonymous Revocation</strong>: A credential has its life cycle: it is issued, it is used, and then it can be revoked for various reasons. Therefore, a verifier must be able to verify whether the credential has been revoked, but this must be done without allowing the ability to correlate information about other revoked credentials.</li>
+      <li><strong>Rotational Identifiers</strong>: identifiers can be used to correlate, so it is important that they are temporary as much as possible during a session and changed after they are used.</li>
+      <li><strong>Phoning home or back-channel communication</strong>: Software often "calls home" for several reasons. They normally do this to collect usage or crash statistics (which could indicate a vulnerability).</li> 
+      <li><strong>Notification/Alerts</strong>: An important aspect, particularly about interactions where the user is required to interact through an Internet credential, is communication with the user</li>
+    </ul>
+  </section>
+
+
+  <section class="slide" class="todo">
+    <h1>Did we do a good job?</h1>
+    <ul>
+      <li>This is just the start :)</li>
+      <li><q>all models are wrong but some models are useful</q></li>
+      <li>Want to do your Threat Model? <a href="https://www.w3.org/community/tmcg/">Join us!</a></li>
+      <li>How we can help? <span lang="cn">是否能通过标准发挥什么作用</span></li>
+    </ul>
+  </section>
+
+  <!-- Outro -->
+
+  <section class="slide">
+    <h1><span lang="cn">谢谢</span></h1>
+    <p>See also:</p>
+    <ul>
+      <li>
+        <q>Identity & the Web</q>
+        <a href="https://www.w3.org/reports/identity-web-impact/">https://www.w3.org/reports/identity-web-impact/</a>
+      </li>
+      <li>
+        <q>Threat Modeling for Digital Credentials</q>
+        <a href="https://github.com/w3c-cg/threat-modeling/blob/main/models/decentralized-identities.md/">https://github.com/w3c-cg/threat-modeling/blob/main/models/decentralized-identities.md</a>
+      </li>
+    </ul>
+    <div>
+      <p>
+        These slides:
+        <br>
+        <a href="https://simoneonofri.github.io/inclusion-2024">https://simoneonofri.github.io/inclusion-2024</a>
+      </p>
+      <p>Email: simone@w3.org</p>
+      <p>WeChat: wxid_3hq0pclnrhr512</p>
+    </div>
+  </section>
+  <!-- Backup
+   <section class="slide">
     <h1>Decentralized Identifiers</h1>
     <p style="font-size: 80%;">
       An identifier technology based on cryptography that empowers us to control our
@@ -242,76 +387,10 @@
         alt="An example of a decentralized identifier shown left to right the 'did' scheme, followed by a colon, followed by an 'example' DID Method identifier, followed by another colon, followed by a method specific identifier with the characters '123456789abcdefghi' is shown." />
     </div>
   </section>
-
-  <!--
- <section class="slide">
-  <h1>Verifiable Credentials (VCs)</h1>
-  <p  style="font-size: 80%;">
-A privacy-preserving technology for issuing, storing, and presenting education
-degrees, government-issued ID cards, shipping container manifests, certified
-product information, and other machine-readable credentials.<br>
-<a href="https://www.w3.org/groups/wg/vc/publications/">Verifiable Credentials</a>, W3C Standard, March 2022.
-  </p>
-  <div style="margin: auto; max-width:40%">
-    <img src="https://www.w3.org/TR/vc-data-model/diagrams/credential.svg" alt="Verifiable Credentials: Credential Metadata, Claim(s), Proof(s)">
-  </div>
-</section>
--->
-
-  <section class="slide">
-    <h1>Ongoing work on VCs</h1>
-
-    <ul style="font-size: 80%;">
-      <li>New revision of the VC Data Model VC</li>
-      <li>BitString Status List: publishing status information such as suspension or revocation/li>
-      <li>Data Integrity: ensuring the authenticity and integrity
-        <ul>
-          <li>BBS</li>
-          <li>EdDSA</li>
-          <li>ECDSA</li>
-          <li><i><a href="https://github.com/w3c-ccg/di-quantum-safe">Quantum-Safe</a></i></li>
-        </ul>
-      </li>
-      <li>JSON Object Signing and Encryption (JOSE) and CBOR Object Signing and Encryption (COSE)</li>
-    </ul>
-    <p>See also <a href="https://www.w3.org/TR/vc-overview/">Verifiable Credentials Overview</a>, July 2024</p>
-  </section>
-
-  <section class="slide">
-    <h1>We want to hear from you!</h1>
-    <ul style="font-size: 80%;">
-      <li>What is the status of Digital Identity in China?
-      <li>Government point of view?
-      <li>Standards to implement?
-      <li>Any Risks？
-      <li>Specific Personas (fictional representation of a user, created to understand and anticipate the target
-        audience's needs, behaviors, and goals) to consider in our model？
-      <li>How can we help?
-    </ul>
-  </section>
-
-  <section class="slide">
-    <h1><span lang="cn">谢谢</span></h1>
-    <p>See also:</p>
-    <ul>
-      <li><q>Identity & the Web</q><a
-          href="https://www.w3.org/reports/identity-web-impact/">https://www.w3.org/reports/identity-web-impact/</a>
-      </li>
-      <li><q>Threat Modeling for Digital Credentials</q><a
-          href="https://github.com/w3c-cg/threat-modeling/blob/main/models/decentralized-identities.md/">https://github.com/w3c-cg/threat-modeling/blob/main/models/decentralized-identities.md</a>
-      </li>
-    </ul>
-    <div>
-      <p>
-        These slides:<br><a
-          href="https://simoneonofri.github.io/inclusion-2024">https://simoneonofri.github.io/inclusion-2024</a>
-      </p>
-      <p>Email: simone@w3.org</p>
-      <p>WeChat: @@wechat@@</p>
-
-    </div>
-  </section>
-
+  
+  
+  
+  -->
 </body>
 
 </html>
