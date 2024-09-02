@@ -175,7 +175,7 @@
   <section class="slide cover clear" id="start">
     <h1>Threat Modeling for Decentralized Identity @ W3C</h1>
     <p>September 6th, 2024</p>
-    <address style="font-size:medium">
+    <address style="font-size: medium">
       Simone Onofri<br>
       <span style="font-size: small;">W3C Security Lead</span><br>
       WeChat: wxid_3hq0pclnrhr512<br>
@@ -188,12 +188,12 @@
     <ul class="spaced">
       <li>W3C <a href="https://www.w3.org/mission/security/">Security</a> Lead since 2024
         <ul>
-          <li>Staff Contact for Web Application Security, Web Authentication, Federated Idenity Working Groups, and Security Interest Group <sup>proposed</sup></li>
+          <li>Staff Contact for Web Application Security, Web Authentication, Federated Identity Working Groups, and Security Interest Group <sup>proposed</sup></li>
           <li>Co-Chair of <em>Threat Modeling Community Group</em></li>
         </ul>
       </li>
       <li>I was in W3C in 2006 for the Semantic Web Deployment Working Group</li>
-      <li>But in general I am Security Geek since 2004 (and before)</li>
+      <li>But in general, I am Security Geek since 2004 (and before)</li>
       <li><em>I care about a secure Web</em></li>
     </ul>
   </section>
@@ -202,8 +202,8 @@
     <h1>World Wide Web Consortium 万维网联盟</h1>
     <img class=side src='https://www.w3.org/comm/assets/graphics/w3c-composition.png' alt='W3C composition'>
     <ul style="font-size: 80%;">
-        <li>Founded in 1994 by Tim Berners-Lee who was Director until June 12, 2023 由 Tim Berners-Lee 于 1994 年创立，并担任董事至 2023 年 6 月 12 日</li>
-        <li>Over 500 technical Web standards<!-- https://www.w3.org/standards/stats/?startdate=1994-10-01&enddate=2024-08-29 -->,<br>480 in progress 约370份开发中的标准 <!-- https://w3c.github.io/spec-dashboard/report.html --></li>
+        <li>Founded in 1994 by Tim Berners-Lee, who was Director until June 12, 2023 由 Tim Berners-Lee 于 1994 年创立，并担任董事至 2023 年 6 月 12 日</li>
+        <li>Over 500 technical Web standards<!-- https://www.w3.org/standards/stats/?startdate=1994-10-01&enddate=2024-08-29 -->,<br>480 in progress 约480份开发中的标准 <!-- https://w3c.github.io/spec-dashboard/report.html --></li>
         <li>Consensus-driven process 由共识驱动的流程, <br>Royalty-Free patent policy 免版税专利政策</li>
         <li>Over 350 Members 超过 350个成员单位</li>
     </ul>
@@ -213,7 +213,7 @@
   <section class="slide">
       <h1>What is Threat Modeling?</h1>
       <ul>
-        <li>Threat Modeling is a family of structured, repeatable processes that allows us to make rational decisions to secure applications, software, and systems (Shostack, 2014).</li>
+        <li>Threat Modeling is a family of structured, repeatable processes that allow us to make rational decisions to secure applications, software, and systems (Shostack, 2014).</li>
         <li>During Threat Modeling, we can identify potential threats, such as vulnerabilities or absence of controls, and prioritize the mitigations (OWASP).</li>
         <li>It is a form of risk assessment that models aspects of the attack and defense sides (NIST SP 800-53 Rev. 5, NIST SP 800-154).</li>
       </ul>
@@ -222,14 +222,14 @@
     <section class="slide">
     <h2>Why Threat Modeling for Digital Credentials?</h2>
     <ul>
-      <li>At W3C, we use Threat Modeling to analyze standards and write the security and privacy considerations sections.</li>
-      <li>When the standardization of the <strong>Digital Credentials API</strong> was proposed, since it will mediate high-assurance and government-issued credentials, a more wide-ranging analysis was requested.</li>
-      <li>Therefore, we created the Threat Modeling Community Group to support standards developers in their work, starting from Digital Credentials in general, and not only the API.</li>
+      <li>At W3C, Threat Modeling analyzes standards and writes the security and privacy considerations sections.</li>
+      <li>When the standardization of the <strong>Digital Credentials API</strong> was proposed since it will mediate high-assurance and government-issued credentials, a more wide-ranging analysis was requested.</li>
+      <li>Therefore, we created the Threat Modeling Community Group to support standards developers in their work, starting from Digital Credentials in general and not only the API.</li>
     </ul>
   </section>
 
   <section class="slide">
-    <h1>How we are doing Threat Modeling?</h1>
+    <h1>How are we doing Threat Modeling?</h1>
     <p>We are using the "Four Questions Framework":</p>
     <ul>
       <li><strong>What are we working on?</strong><br>(understanding architecture, actors, data flows, etc...)</li>
@@ -237,7 +237,6 @@
       <li><strong>What are we going to do about it?</strong><br>(identify and prioritize countermeasures, residual risk, etc...)</li>
       <li><strong>Did we do a good job?</strong><br>(reiterating until we are happy with the result)</li>
     </ul>
-    <p class="note">In this case, this is a living Threat Model as threats are evolving.</p>
   </section>
   
   <section class="slide">
@@ -273,12 +272,12 @@
       <li><strong>Verifiable Presentations</strong> (created by the Holder):
         <ul>
           <li>Metadata: of the Presentation</li>
-          <li>Verifiable Credential(s): data stemming from multiple Verifiable Credentials, and can contain additional metadata in forms of additional claims.</li>
+          <li>Verifiable Credential(s): data stemming from multiple Verifiable Credentials can contain additional metadata in the form of additional claims.</li>
           <li>Proof(s): cryptographic proof of the integrity of the credential, typically via a digital signature.</li>
         </ul>      
       </li>
     </ul>
-    <p style="font-size: 80%"><i>From Threat Modeling perspective, we need to also consider Cryptographic elemenets (e.g., algorithms), Identifiers, Revocation methods, etc...</i></p>
+    <p class="note" style="font-size: 80%"><i>From a Threat Modeling perspective, we also need to consider Cryptographic elements (e.g., algorithms), Identifiers, Revocation methods, etc...</i></p>
   </section>
 
   <section class="slide">
@@ -315,7 +314,7 @@
       <li><strong>Blinded Signature</strong>: is a type of digital signature for which the content of the message is concealed before it is signed. Sending the cryptographic proof of signature without providing the verifier with any other information about the signer.</li>
       <li><strong>Selective disclosure</strong>: is the ability to show only a part (claim) of the credential and not all of it or show only possession of that credential. For example, we can show only the date of birth rather than the entire driver's license where it is contained.</li>
       <li><strong>Predicate Proofs and Range Proof</strong>: is the ability to respond to a boolean assertion (true-false) to a specific request. For example, if we say we are of age, we don't have to show the date of birth but compute the answer.</li>
-      <li><strong>Post-Quantum Algorightms</strong>: generating a digital signature using Post-Quantum digital signature algorithms.</li>
+      <li><strong>Post-Quantum Cryprography</strong>: generating a digital signature using Post-Quantum digital signature algorithms.</li>
     </ul>
   </section>
 
@@ -324,8 +323,8 @@
     <ul style="font-size: 80%;">
       <li><strong>Anonymous Revocation</strong>: a verifier must be able to verify the status of a credential, but this must be done without allowing the ability to correlate information about the specific or other credentials.</li>
       <li><strong>Rotational Identifiers</strong>: identifiers can be used to correlate, so it is important that they are temporary as much as possible during a session and changed after they are used.</li>
-      <li><strong>Phoning home or back-channel communication</strong>: Software often "calls home" for several reasons. They normally do this to collect usage or crash statistics but also to track the users or the verifier.</li> 
-      <li><strong>Notification/Alerts</strong>: An holder must be notified if a presentation is going to phoning home and must decide what do to.</li>
+      <li><strong>Phoning home or back-channel communication</strong>: Software often "calls home" for several reasons. They normally do this to collect usage or crash statistics and track the users or the verifier.</li> 
+      <li><strong>Notification/Alerts</strong>: A holder must be notified if a presentation is going to be phoning home and must decide what to do.</li>
       <li><strong>Privacy-Preserving DIDs</strong>: When resolving a DID, it is possible that the method uses a connection to a system for resolution. If this system is under the direct or indirect control of the <i>Issuer</i></li>
     </ul>
   </section>
@@ -334,7 +333,7 @@
     <h2>Did we do a good job?</h2>
     <p><q>All models are wrong, but some are useful</q> from statistician George Box (1976), quoted by Shostack (2014) in the context of threat modeling</p>
     <ul>
-      <li>This Model is useful for us understanding the big picture.</li>
+      <li>This Model is useful for us to understand the big picture.</li>
       <li>Each solution (e.g., EUDI Wallet) needs a dedicated Threat Model.</li>
       <li>Do you want to Threat Model? <a href="https://www.w3.org/community/tmcg/">Join us!</a></li>
     </ul>
@@ -388,7 +387,7 @@
       </li>
       <li><strong>Guiding Web Developers</strong>
       <ul>
-        <li>Security Web Application Guidelines Commynity Group</li>
+        <li>Security Web Application Guidelines Community Group</li>
       </ul>
       </li>
     </ul>
