@@ -319,15 +319,14 @@
     <h1>What are we going to do about it?<br><strong>Presentation and Verification</strong></h1>
     <ul style="font-size: 80%;">
       <li><strong>Anonymous Revocation</strong>: a verifier must be able to verify the status of a credential, without having the ability to correlate information about the credentials and the holder.</li>
-      <li><strong>No Phoning home or back-channel communication</strong>: Software often "calls home" for several reasons. They normally do this to collect usage or crash statistics but that can be used to trace the users or the verifier.</li> 
-      <li><strong>Privacy-Preserving DIDs</strong>: When resolving a DID, it is possible that the method uses a connection to a system for resolution.</li>
+      <li><strong>Privacy-Preserving DID methods</strong>: For example, during resolution, it is possible that the method communicates with the issuer. If the DID uses a distributed ledger, it would be better not to write private information into it.</li>
     </ul>
   </section>
 
   <section class="slide">
     <h1>What are we going to do about it?<br><strong>Cryptography</strong></h1>
     <ul style="font-size: 80%;">
-      <li><strong>Selective Disclosure and Unlinkable Credentials</strong>: is the ability to show only a part of the credential and not the full one, in an unlinkable manner. For example, we can show only the date of birth rather than the full ID document where it is contained, we are working on <a href="https://www.w3.org/TR/vc-di-bbs/">BBS cryptosuites</a>.</li>
+      <li><strong>Selective Disclosure and Unlinkable Credentials</strong>: is the ability to show only a part of the credential and not the full one, in an unlinkable manner. For example, we can show only the date of birth rather than the full passport where it is contained, we are working on <a href="https://www.w3.org/TR/vc-di-bbs/">BBS cryptosuites</a>.</li>
       <li><strong>Post-Quantum Cryprography</strong>: <a href="https://w3c-ccg.github.io/di-quantum-safe/">Quantum-safe cryptosuites</a> for signatures.</li>
     </ul>
     <p class="note"><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/200">Feedback</a> on the EU Digital Identity's ARF 1.4.0: <q>Our specific recommendation is to use the BBS</q> [...], and <q>countering future quantum threats</q>.</p>
@@ -339,7 +338,7 @@
     <ul>
       <li>This Model is useful for us to understand the big picture, create a place to sharing ideas, and understanding the need for other standards.</li>
       <li>Each solution needs a dedicated Threat Model (e.g., <a href="https://drive.google.com/drive/folders/1mgwhZ0jTAeGIE8Ewf3kK34dLjPwOTM5L">EUDI Communication Protocol and Wallet</a>).</li>
-      <li>Welcome to join the Threat Model discussions in the <a href="https://www.w3.org/community/tmcg/">Threat Modeling Community Group</a></li>
+      <li>Welcome to join the Threat Model discussions in the <a href="https://www.w3.org/community/tmcg/">Threat Modeling Community Group</a>.</li>
     </ul>
   </section>
 
