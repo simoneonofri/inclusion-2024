@@ -173,7 +173,7 @@
   </div>
 
   <section class="slide cover clear" id="start">
-    <h1>Threat Modeling for Decentralized Identity @ W3C</h1>
+    <h1>Threat Modeling for Decentralized Identities @ W3C</h1>
     <p>September 6th, 2024</p>
     <address style="font-size: medium">
       Simone Onofri<br>
@@ -186,14 +186,14 @@
   <section class="slide">
     <h1>Who am I?</h1>
     <ul class="spaced">
-      <li>W3C <a href="https://www.w3.org/mission/security/">Security</a> Lead since 2024
+      <li>W3C <a href="https://www.w3.org/mission/security/">Security</a> Lead <span lang="cn">安全标准领域负责人</span> since 2024
         <ul>
-          <li>Staff Contact for Web Application Security, Web Authentication, Federated Identity Working Groups, and Security Interest Group <sup>proposed</sup></li>
+          <li>Staff Contact for Web Application Security, Web Authentication, Federated Identity Working Groups, and <i>proposed</i> Security Interest Group</li>
           <li>Co-Chair of <em>Threat Modeling Community Group</em></li>
         </ul>
       </li>
       <li>I was in W3C in 2006 for the Semantic Web Deployment Working Group</li>
-      <li>But in general, I am Security Geek since 2004 (and before)</li>
+      <li>But in general, I am Security Geek since 2004 (and before) for Red Teaming, Blue Teaming, Security Research, etc...</li>
       <li><em>I care about a secure Web</em></li>
     </ul>
   </section>
@@ -213,35 +213,36 @@
   <section class="slide">
       <h1>What is Threat Modeling?</h1>
       <ul>
-        <li>Threat Modeling is a family of structured, repeatable processes that allow us to make rational decisions to secure applications, software, and systems (Shostack, 2014).</li>
-        <li>During Threat Modeling, we can identify potential threats, such as vulnerabilities or absence of controls, and prioritize the mitigations (OWASP).</li>
-        <li>It is a form of risk assessment that models aspects of the attack and defense sides (NIST SP 800-53 Rev. 5, NIST SP 800-154).</li>
+        <li>Threat Modeling is a <strong>family of structured, repeatable processes</strong> that allow us to make <strong>rational decisions</strong> to secure applications, software, and systems (Shostack, 2014).</li>
+        <li>During Threat Modeling, <strong>we can anticipate potential threats</strong>, such as vulnerabilities or absence of controls, and prioritize the mitigations (OWASP).</li>
+        <li>It is a form of risk assessment that <strong>models aspects of the attack and defense</strong> sides (NIST SP 800-53 Rev. 5, NIST SP 800-154).</li>
       </ul>
     </section> 
 
-    <section class="slide">
+  <section class="slide">
     <h2>Why Threat Modeling for Digital Credentials?</h2>
     <ul>
-      <li>At W3C, Threat Modeling analyzes standards and writes the security and privacy considerations sections.</li>
-      <li>When the standardization of the <strong>Digital Credentials API</strong> was proposed since it will mediate high-assurance and government-issued credentials, a more wide-ranging analysis was requested.</li>
-      <li>Therefore, we created the Threat Modeling Community Group to support standards developers in their work, starting from Digital Credentials in general and not only the API.</li>
+      <li>At W3C, we use Threat Modeling to analyze standards and write the <a href="https://www.w3.org/TR/security-privacy-questionnaire/">security and privacy considerations</a> sections.</li>
+      <li>When members proposed the standardization of the <a href="https://github.com/w3c/strategy/issues/450">Digital Credentials API</a>, members requested a <a href="https://github.com/w3c/strategy/issues/458">comprehensive threats analysis</a> because the API will mediate in the Browser high-assurance and government-issued credentials.</li>
+      <li>Therefore, we created the <a href="https://www.w3.org/groups/cg/tmcg/">Threat Modeling Community Group</a> open to all to discuss the various threats.</li>
+      <li>We started a generic 'meta' model, not only on the API, that can also be used as a starting point by any <abbr title="Standards Development Organizations">SDOs</abbr>, Governments, and Implementers.</li>
     </ul>
   </section>
 
   <section class="slide">
     <h1>How are we doing Threat Modeling?</h1>
-    <p>We are using the "Four Questions Framework":</p>
+    <p>We are using the "<a href="https://github.com/adamshostack/4QuestionFrame">Four Questions Frame</a>":</p>
     <ul>
-      <li><strong>What are we working on?</strong><br>(understanding architecture, actors, data flows, etc...)</li>
+      <li><strong>What are we working on?</strong><br>(understanding scope, architecture, actors, data flows, etc...)</li>
       <li><strong>What can go wrong?</strong><br>(understanding threats, threat actors, attacks, etc...)</li>
-      <li><strong>What are we going to do about it?</strong><br>(identify and prioritize countermeasures, residual risk, etc...)</li>
+      <li><strong>What are we going to do about it?</strong><br>(Identifying and prioritizing countermeasures, residual risk, etc...)</li>
       <li><strong>Did we do a good job?</strong><br>(reiterating until we are happy with the result)</li>
     </ul>
   </section>
   
   <section class="slide">
     <h1>What are we working on?<br><strong>Architecture</strong></h1>
-    <p>We started from the Verifiable Credentials Data Model (VCDM) to identify main Actors, Data Flows, and Data to protect.</p>
+    <p>We started from the <a href="https://www.w3.org/TR/vc-data-model-2.0/">Verifiable Credentials Data Model (VCDM)</a> to identify main Actors, Data Flows, and Data to protect.</p>
     <figure class="center">
       <img src="https://www.w3.org/TR/vc-data-model-2.0/diagrams/ecosystem.svg">
       <figcaption>The roles and information flows of VCDM</figcaption>
@@ -250,8 +251,7 @@
 
   <section class="slide">
     <h1>What are we working on?<br><strong>Actors and Data Flows</strong></h1>
-      <p style="font-size: 80%;">The Actors and the Data Flows:</p>
-      <ul style="font-size: 80%;">
+      <ul>
         <li>We have an <strong>Issuer</strong>, which issues the <i>Verifiable Credential</i> to the <i>Holder</i> and manages the status (e.g., revocation).</li>
         <li>We have a <strong>Holder</strong>, who stores the <i>Verifiable Credential</i> in a <i>Wallet</i>, and send the <i>Verifiable Presentation</i> to a <i>Verifier</i>.</li>
         <li>We have a <strong>Verifier</strong>, who verifies the <i>Holder</i>'s <i>Verifiable Presentations</i> to give access to a resource or a service.</li>
@@ -260,82 +260,86 @@
   </section>
 
   <section class="slide">
-    <h1>What are we working on?<br><strong>The actors exchanges</strong></h1>
+    <h1>What are we working on?<br><strong>Exchanged Data</strong></h1>
     <ul style="font-size: 80%">
       <li><strong>Verifiable Credentials</strong> (created by the Issuer):
         <ul>
-          <li>Metadata: of the Credentials (e.g., reference to the issuer, the validity date) </li>
-          <li>Claim(s): one or more assertions where a characteristic of a subject is described (e.g., Alice is a citizen of a certain state).</li>
-          <li>Proof(s): cryptographic proof of the integrity of the credential, typically via a digital signature.</li>
+          <li>Metadata: of the Credentials (e.g., reference to the issuer, the validity date)</li>
+          <li>Claim(s): one or more assertions where a characteristic of a subject is described, in a specific <em>format</em> (e.g., Alice is a citizen of a certain state).</li>
+          <li>Proof(s): <em>cryptographic</em> proof of the integrity of the credential, typically via a digital signature.</li>
         </ul>
       </li>
       <li><strong>Verifiable Presentations</strong> (created by the Holder):
         <ul>
           <li>Metadata: of the Presentation</li>
-          <li>Verifiable Credential(s): data stemming from multiple Verifiable Credentials can contain additional metadata in the form of additional claims.</li>
-          <li>Proof(s): cryptographic proof of the integrity of the credential, typically via a digital signature.</li>
+          <li>Verifiable Credential(s): data from multiple Verifiable Credentials in the form of additional claims.</li>
+          <li>Proof(s): <em>cryptographic</em> proof of the integrity of the credential, typically via a digital signature.</li>
         </ul>      
       </li>
     </ul>
-    <p class="note" style="font-size: 80%"><i>From a Threat Modeling perspective, we also need to consider Cryptographic elements (e.g., algorithms), Identifiers, Revocation methods, etc...</i></p>
+    <p class="note">From a Threat Modeling perspective: we have cryptography, formats, serialization, <a href="https://www.w3.org/TR/rdf-canon/">canonicalization</a>, identifiers, revocation methods, etc...</p>
   </section>
 
   <section class="slide">
     <h1>What are we working on?<br><strong>Identifiers</strong></h1>
     <ul>
-      <li>Talking about <strong>identifiers</strong>, we mainly refer to the Decentralized Identifiers (DIDs), an identifier technology based on cryptography that empowers us to control our data and consent to its usage.</li>
+      <li>Talking about <strong>identifiers</strong>, we mainly refer to the Decentralized Identifiers (DIDs), an identifier technology based on cryptography that empowers the user to control their data and and usage.</li>
       <li>DIDs methods can rely on various technologies, including blockchains, the web, InterPlanetary File System (IPFS), and Domain Name System (DNS).</li>
     </ul>
-    <p style="font-size: 80%">From a Threat Modeling perspective, <em></em>each DID method needs it is own Threat Model</em></p>
+    <p class="note">From a Threat Modeling perspective: <em>each DID method needs it is own Threat Model</em> (e.g., <code>did:web</code> may calls home, <code>did:btcr</code> may have correlation)</p>
   </section>
 
   <section class="slide">
-    <h1>What can go wrong?<br><strong>Threats/Attacks/Controls Frameworks</strong></h1>
+    <h1>What can go wrong?<br><strong>Mnemonic Threat Lists</strong></h1>
+    <q>One effective though inefficient approach to threat modeling is to cycle the various lists to understand how they may affect the model</q>
     <ul>
-      <li><strong>STRIDE</strong>: Spoofing, Tampering, Repudiation, Denial of service, Escalation of privileges</li>
-      <li><strong>LINDDUN</strong>: Linking, Identifying, Non-Repudiation, Detecting, Data Disclosure, Unawareness & Inintervenability, Non-Compliance</li>
-      <li><strong>RFC 3552</strong>: Replay Attacks, Message Insertion, Message Deletion, Message Modification, Man-In-The-Middle</li>
-      <li><strong>RFC 6973</strong>: Correlation, Identification, Secondary Use, Disclosure, Exclusion</li>
-      <li><strong>OSSTMM</strong>: Visibility, Access, Trust, Authentication, Indemnification, Resilience, Subjugation, Continuity, Non-Repudiation, Confidentiality, Privacy, Integrity, Alarm</li>
+      <li><strong>STRIDE</strong> <i>(Security Threats)</i>: Spoofing, Tampering, <em>Repudiation</em>, Denial of service, Escalation of privileges</li>
+      <li><strong>LINDDUN</strong> <i>(Privacy Threats)</i>: Linking, Identifying, <em>Non-Repudiation</em>, Detecting, Data Disclosure, Unawareness, Non-Compliance</li>
+    </ul>
+    <p class="note">Note: <strong>Repudiation</strong> is a Security Threat, and its negation <strong>Non-Repudiation</strong>, is a Privacy Threat.</p>
+  </section>
+
+  <section class="slide">
+    <h1>What can go wrong?<br><strong>Other lists</strong></h1>
+    <ul>
+     <li><strong>Open Source Security Testing Methodology Manual (OSSTMM)</strong> <i>(Controls)</i>: Authentication, Indemnification, Resilience, Subjugation, Continuity, <em>Non-Repudiation</em>, Confidentiality, <em>Privacy</em>, Integrity, Alarm</li>
+     <li><strong>RFC 3552</strong> <i>(Security Attacks)</i>: Replay Attacks, Message Insertion, Message Deletion, Message Modification, Man-In-The-Middle</li>
+     <li><strong>RFC 6973</strong> <i>(Privacy Threats)</i>: Correlation, Identification, Secondary Use, Disclosure, Exclusion</li>
     </ul>
   </section>
-
   <section class="slide">
-    <h1>What can go wrong?<br><strong>Using LINNDUNN</strong></h1>
+    <h1>What can go wrong?<br><strong>Using LINDDUN</strong></h1>
     <figure>
       <img src="assets/threat-model-digital-credentials-ietf120.svg"/>
-      <figcaption>Brainstorming in a Side Meeting @ IETF120</figcaption>
+      <figcaption>Brainstorming, using gamification, in a Side Meeting @ IETF120</figcaption>
     </figure>
-  </section>
-
-  <section class="slide">
-    <h1>What are we going to do about it?<br><strong>Cryptography</strong></h1>
-    <ul style="font-size: 80%;">
-      <li><strong>Blinded Signature</strong>: is a type of digital signature for which the content of the message is concealed before it is signed. It is possible to send the cryptographic proof of the signature without providing the verifier with any other information about the signer.</li>
-      <li><strong>Selective disclosure</strong>: is the ability to show only a part (a claim) of the credential and not the full one. For example, we can show only the date of birth rather than the entire driver's license where it is contained.</li>
-      <li><strong>Predicate Proofs and Range Proof</strong>: is the ability to respond to a boolean assertion (true-false) to a specific request. For example, if we say we are of age, we don't have to show the date of birth but compute the answer.</li>
-      <li><strong>Post-Quantum Cryprography</strong>: generating a digital signature using Post-Quantum digital signature algorithms.</li>
-    </ul>
   </section>
 
   <section class="slide">
     <h1>What are we going to do about it?<br><strong>Presentation and Verification</strong></h1>
     <ul style="font-size: 80%;">
-      <li><strong>Anonymous Revocation</strong>: a verifier must be able to verify the status of a credential, but this must be done without allowing the ability to correlate information about the specific or other credentials.</li>
-      <li><strong>Rotational Identifiers</strong>: identifiers can be used to correlate, so it is important that they are temporary as much as possible during a session and changed after they are used.</li>
-      <li><strong>Phoning home or back-channel communication</strong>: Software often "calls home" for several reasons. They normally do this to collect usage or crash statistics and track the users or the verifier.</li> 
-      <li><strong>Notification/Alerts</strong>: A holder must be notified if a presentation is going to be phoning home and must decide what to do.</li>
-      <li><strong>Privacy-Preserving DIDs</strong>: When resolving a DID, it is possible that the method uses a connection to a system for resolution. If this system is under the direct or indirect control of the <i>Issuer</i></li>
+      <li><strong>Anonymous Revocation</strong>: a verifier must be able to verify the status of a credential, without having the ability to correlate information about the credentials and the holder.</li>
+      <li><strong>No Phoning home or back-channel communication</strong>: Software often "calls home" for several reasons. They normally do this to collect usage or crash statistics but that can be used to trace the users or the verifier.</li> 
+      <li><strong>Privacy-Preserving DIDs</strong>: When resolving a DID, it is possible that the method uses a connection to a system for resolution.</li>
     </ul>
   </section>
 
   <section class="slide">
+    <h1>What are we going to do about it?<br><strong>Cryptography</strong></h1>
+    <ul style="font-size: 80%;">
+      <li><strong>Selective Disclosure and Unlinkable Credentials</strong>: is the ability to show only a part of the credential and not the full one, in an unlinkable manner. For example, we can show only the date of birth rather than the full ID document where it is contained, we are working on <a href="https://www.w3.org/TR/vc-di-bbs/">BBS cryptosuites</a>.</li>
+      <li><strong>Post-Quantum Cryprography</strong>: <a href="https://w3c-ccg.github.io/di-quantum-safe/">Quantum-safe cryptosuites</a> for signatures.</li>
+    </ul>
+    <p class="note"><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/issues/200">Feedback</a> on the EU Digital Identity's ARF 1.4.0: <q>Our specific recommendation is to use the BBS</q> [...], and <q>countering future quantum threats</q>.</p>
+  </section>
+
+  <section class="slide">
     <h2>Did we do a good job?</h2>
-    <p><q>All models are wrong, but some are useful</q> from statistician George Box (1976), quoted by Shostack (2014) in the context of threat modeling</p>
+    <p><q>All models are wrong, but some are useful</q> from statistician George Box (1976), quoted by Shostack (2014)</p>
     <ul>
-      <li>This Model is useful for us to understand the big picture.</li>
-      <li>Each solution (e.g., EUDI Wallet) needs a dedicated Threat Model.</li>
-      <li>Do you want to Threat Model? <a href="https://www.w3.org/community/tmcg/">Join us!</a></li>
+      <li>This Model is useful for us to understand the big picture, create a place to sharing ideas, and understanding the need for other standards.</li>
+      <li>Each solution needs a dedicated Threat Model (e.g., <a href="https://drive.google.com/drive/folders/1mgwhZ0jTAeGIE8Ewf3kK34dLjPwOTM5L">EUDI Communication Protocol and Wallet</a>).</li>
+      <li>Welcome to join the Threat Model discussions in the <a href="https://www.w3.org/community/tmcg/">Threat Modeling Community Group</a></li>
     </ul>
   </section>
 
@@ -350,7 +354,7 @@
         <a href="https://www.w3.org/reports/identity-web-impact/">https://www.w3.org/reports/identity-web-impact/</a>
       </li>
       <li>
-        <q>Threat Modeling for Digital Credentials</q>
+        <q>Threat Model for Digital Credentials</q>
         <a href="https://github.com/w3c-cg/threat-modeling/blob/main/models/decentralized-identities.md/">https://github.com/w3c-cg/threat-modeling/blob/main/models/decentralized-identities.md</a>
       </li>
     </ul>
