@@ -306,6 +306,7 @@
      <li><strong>RFC 3552</strong> <i>(Security Attacks)</i>: Replay Attacks, Message Insertion, Message Deletion, Message Modification, Man-In-The-Middle</li>
      <li><strong>RFC 6973</strong> <i>(Privacy Threats)</i>: Correlation, Identification, Secondary Use, Disclosure, Exclusion</li>
     </ul>
+    <p class="note">Note: In OSSTMM, <em>Security and Privacy are together</em>, and anyway there are some overlaps.</p>
   </section>
   <section class="slide">
     <h1>What can go wrong?<br><strong>Using LINDDUN</strong></h1>
@@ -316,16 +317,10 @@
   </section>
 
   <section class="slide">
-    <h1>What are we going to do about it?<br><strong>Presentation and Verification</strong></h1>
+    <h1>What are we going to do about it?<br><strong>Mitigations</strong></h1>
     <ul style="font-size: 80%;">
       <li><strong>Anonymous Revocation</strong>: a verifier must be able to verify the status of a credential, without having the ability to correlate information about the credentials and the holder.</li>
       <li><strong>Privacy-Preserving DID methods</strong>: For example, during resolution, it is possible that the method communicates with the issuer. If the DID uses a distributed ledger, it would be better not to write private information into it.</li>
-    </ul>
-  </section>
-
-  <section class="slide">
-    <h1>What are we going to do about it?<br><strong>Cryptography</strong></h1>
-    <ul style="font-size: 80%;">
       <li><strong>Selective Disclosure and Unlinkable Credentials</strong>: is the ability to show only a part of the credential and not the full one, in an unlinkable manner. For example, we can show only the date of birth rather than the full passport where it is contained, we are working on <a href="https://www.w3.org/TR/vc-di-bbs/">BBS cryptosuites</a>.</li>
       <li><strong>Post-Quantum Cryprography</strong>: <a href="https://w3c-ccg.github.io/di-quantum-safe/">Quantum-safe cryptosuites</a> for signatures.</li>
     </ul>
